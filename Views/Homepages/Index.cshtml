@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Market_Store.Models.Homepage>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdminDashboard.cshtml";
+}
+
+<div class="container">
+
+
+    <h1>Index</h1>
+    <p>
+        <a class="btn btn-primary" asp-controller="Homepages" asp-action="Create">Add Slider</a>
+    </p>
+    <div class="row">
+
+           
+            @foreach (var item in Model)
+            {
+               
+                    <div class="card mb-3" >
+                        <img class="card-img-top" src="/Image/@item.IMAGES_SLIDER" alt="Card image cap" >
+                        <div class="card-body">
+                            <h5 class="card-title">This is Big Title: @item.TILTE_BIG</h5>
+                            <p class="card-text"> This is Small Tilte: @item.TILTE_SMALL</p>
+                        </div>
+                        <div class="card-footer">
+                            <a asp-action="Edit" asp-route-id="@item.HomeId"><span class="material-icons">edit</span></a>|
+                            <a asp-action="Details" asp-route-id="@item.HomeId"><span class="material-icons">info</span></a>|
+                            <a asp-action="Delete" asp-route-id="@item.HomeId"><span class="material-icons">delete</span></a>
+
+
+                        </div>
+                    </div>
+              
+            }
+
+        
+    </div>
+
+
+
+</div>

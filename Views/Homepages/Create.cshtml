@@ -1,0 +1,88 @@
+﻿@model Market_Store.Models.Homepage
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutAdminDashboard.cshtml";
+}
+
+<div class="container">
+    <h1>Create</h1>
+
+    <h4>Homepage</h4>
+    <hr />
+
+    <form class="was-validated" enctype="multipart/form-data" asp-action="Create" asp-controller="Homepages">
+
+
+        <div>
+            <label for="validationCustom03">Enter a large title for the scroll bars</label>
+            <input asp-for="TILTE_BIG" type="text" class="form-control" id="validationCustom03" required>
+            <div class="invalid-feedback">
+                the Field is Required
+                </div>
+
+        </div>
+
+        <div>
+            <label for="validationCustom03">Enter a small title for the scroll bars</label>
+            <input  asp-for="TILTE_SMALL" type="text" class="form-control" id="validationCustom03" required>
+            <div class="invalid-feedback">
+                the Field is Required
+
+            </div>
+
+        </div>
+
+        <div class="custom-file">
+            <input asp-for="ImageFile"  type="file" class="custom-file-input" id="validatedCustomFile" required accept="/Image/*">
+            <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+            <div class="invalid-feedback">Example invalid custom file feedback</div>
+        </div>
+
+        <div class="form-group">
+         <input type="submit" value="Create" class="btn btn-primary" />
+         </div>
+
+    </form>
+
+    @*<div class="row">
+    <div class="col-md-4">
+    <form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+    <label asp-for="Logoimage" class="control-label"></label>
+    <input asp-for="Logoimage" class="form-control" />
+    <span asp-validation-for="Logoimage" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+    <label asp-for="Imgeslider1" class="control-label"></label>
+    <input asp-for="Imgeslider1" class="form-control" />
+    <span asp-validation-for="Imgeslider1" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+    <label asp-for="TitleSlider1" class="control-label"></label>
+    <input asp-for="TitleSlider1" class="form-control" />
+    <span asp-validation-for="TitleSlider1" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+    <label asp-for="TitleSlider2" class="control-label"></label>
+    <input asp-for="TitleSlider2" class="form-control" />
+    <span asp-validation-for="TitleSlider2" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+    <label asp-for="Imageslider2" class="control-label"></label>
+    <input asp-for="Imageslider2" class="form-control" />
+    <span asp-validation-for="Imageslider2" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+    <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+    </form>
+    </div>
+    </div>*@
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+</div>
